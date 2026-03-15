@@ -1,6 +1,4 @@
-// ==========================================================
-// 3. Testbench - Verilog-2001
-// ==========================================================
+
 module tb_nr_divider;
     reg clk, rst;
     reg signed [31:0] da, db;
@@ -22,7 +20,6 @@ module tb_nr_divider;
         rq = $itor(qq) / 65536.0;
     end
 
-    // VCD waveform dumping
     initial begin
         $dumpfile("simulation.vcd");
         $dumpvars(0, tb_nr_divider);
