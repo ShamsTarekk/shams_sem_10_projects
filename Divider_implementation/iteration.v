@@ -1,6 +1,4 @@
-// ==========================================================
-// 1. NR Stage (2-Cycle Balanced Pipeline) - Verilog-2001
-// ==========================================================
+
 module nr_iteration_stage #(parameter WIDTH = 32, FRAC = 16)(
     input clk, rst,
     input signed [WIDTH-1:0] a_in, b_in, x_in,
