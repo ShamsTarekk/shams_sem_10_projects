@@ -1,0 +1,115 @@
+$date
+	Tue Apr 14 16:43:51 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module Lut_tb $end
+$var wire 5 ! out [4:0] $end
+$var reg 5 " a [4:0] $end
+$var reg 5 # b [4:0] $end
+$var reg 1 $ clk $end
+$var reg 1 % reset $end
+$var reg 2 & s [1:0] $end
+$var reg 1 ' sync $end
+$scope module uut $end
+$var wire 5 ( a [4:0] $end
+$var wire 5 ) b [4:0] $end
+$var wire 1 $ clk $end
+$var wire 1 % reset $end
+$var wire 2 * s [1:0] $end
+$var wire 1 ' sync $end
+$var reg 5 + out [4:0] $end
+$var reg 5 , y [4:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 ,
+bx +
+b0 *
+b0 )
+b0 (
+0'
+b0 &
+1%
+0$
+b0 #
+b0 "
+bx !
+$end
+#5000
+b0 !
+b0 +
+1$
+#10000
+0$
+#15000
+0%
+1$
+#20000
+b10000 ,
+1'
+b11000 #
+b11000 )
+b10101 "
+b10101 (
+0$
+#25000
+b10000 !
+b10000 +
+1$
+#30000
+b11101 ,
+b1 &
+b1 *
+0$
+#35000
+b11101 !
+b11101 +
+1$
+#40000
+b1111 ,
+b10 &
+b10 *
+b101 #
+b101 )
+b1010 "
+b1010 (
+0$
+#45000
+b1111 !
+b1111 +
+1$
+#50000
+b1100 ,
+b11 &
+b11 *
+b11 #
+b11 )
+b1111 "
+b1111 (
+0$
+#55000
+b1100 !
+b1100 +
+1$
+#60000
+b1 ,
+b0 &
+b0 *
+b1 #
+b1 )
+b11111 "
+b11111 (
+0'
+0$
+#65000
+1$
