@@ -1,0 +1,85 @@
+`timescale 1ns/1ns
+
+import uvm_pkg::*;
+import my_pkg::*; 
+
+`include "uvm_macros.svh"
+
+module top;
+  
+  
+  logic wclk, rclk;
+  
+  //instantiation
+  
+  fifo_interface intf(
+    .wclk(wclk),
+    .rclk(rclk));
+  
+  
+  
+  
+  asynchronous_fifo dut (
+    .wclk(intf.wclk),
+    .wrst_n(intf.wrst_n),
+    .rclk(intf.rclk),
+    .rrst_n(intf.rrst_n),
+    .w_en(intf.w_en),
+    .r_en(intf.r_en),
+    .data_in(intf.data_in),
+    .data_out(intf.data_out),
+    .full(intf.full),
+    .empty(intf.empty)
+  );
+  
+  
+  initial begin
+   
+    uvm_config_db #(virtual fifo_interface)::set(null, "*", "vif", intf); //vif available for all components
+    
+    
+  end
+  
+  
+  
+  initial begin
+    run_test("fifo_test");
+  end
+  
+  
+  initial begin
+    wclk = 0;
+    #5;
+    forever begin
+      wclk = ~wclk;
+      #10;
+    end
+  end
+  
+  initial begin
+    rclk = 0;
+    #5;
+    forever begin
+      rclk = ~rclk;
+      #35;
+    end
+  end
+  
+  initial begin
+    
+    #5000;
+    $display("Time out!!");
+    $finish();
+  end
+  
+  
+  initial begin
+    $dumpfile("waveform.vcd");
+    
+    $dumpvars();
+  end
+  
+  
+  
+endmodule
+

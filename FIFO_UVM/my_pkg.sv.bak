@@ -1,0 +1,15 @@
+package my_pkg;
+  import uvm_pkg::*;
+
+  `include "uvm_macros.svh"
+
+  `include "sequence_item.sv"
+  `include "sequencer.sv"
+  `include "sequence.sv"
+  `include "monitor.sv"
+  `include "driver.sv"
+  `include "agent.sv"
+  `include "env.sv"
+  `include "test.sv"
+
+endpackage

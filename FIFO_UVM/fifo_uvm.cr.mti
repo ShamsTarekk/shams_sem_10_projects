@@ -1,0 +1,112 @@
+C:/questasim64_2024.1/examples/My_Project/fifo_uvm/sync_2ff.v {1 {vlog -work work -vopt -stats=none C:/questasim64_2024.1/examples/My_Project/fifo_uvm/sync_2ff.v
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module sync_2ff
+
+Top level modules:
+	sync_2ff
+
+} {} {}} C:/questasim64_2024.1/examples/My_Project/fifo_uvm/agent.sv {0 {vlog -work work -vopt -sv -stats=none C:/questasim64_2024.1/examples/My_Project/fifo_uvm/agent.sv
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+** Error: (vlog-13069) C:/questasim64_2024.1/examples/My_Project/fifo_uvm/agent.sv(1): near "uvm_agent": syntax error, unexpected IDENTIFIER.
+** Error: C:/questasim64_2024.1/examples/My_Project/fifo_uvm/agent.sv(1): Error in class extension specification.
+
+} {3.0 5.0} {}} C:/questasim64_2024.1/examples/My_Project/fifo_uvm/monitor.sv {0 {vlog -work work -vopt -sv -stats=none {C:\questasim64_2024.1\examples\My_Project\fifo_uvm\monitor.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+** Error: (vlog-13069) C:\questasim64_2024.1\examples\My_Project\fifo_uvm\monitor.sv(1): near "uvm_monitor": syntax error, unexpected IDENTIFIER.
+** Error: C:\questasim64_2024.1\examples\My_Project\fifo_uvm\monitor.sv(1): Error in class extension specification.
+
+} {3.0 5.0} {}} C:/questasim64_2024.1/examples/My_Project/fifo_uvm/env.sv {0 {vlog -work work -vopt -sv -stats=none C:/questasim64_2024.1/examples/My_Project/fifo_uvm/env.sv
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+** Error: (vlog-13069) C:/questasim64_2024.1/examples/My_Project/fifo_uvm/env.sv(1): near "uvm_env": syntax error, unexpected IDENTIFIER.
+** Error: C:/questasim64_2024.1/examples/My_Project/fifo_uvm/env.sv(1): Error in class extension specification.
+
+} {3.0 5.0} {}} C:/questasim64_2024.1/examples/My_Project/fifo_uvm/sequence.sv {0 {vlog -work work -vopt -sv -stats=none {C:\questasim64_2024.1\examples\My_Project\fifo_uvm\sequence.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+** Error: (vlog-13069) C:\questasim64_2024.1\examples\My_Project\fifo_uvm\sequence.sv(4): near "uvm_sequence": syntax error, unexpected IDENTIFIER.
+** Error: C:\questasim64_2024.1\examples\My_Project\fifo_uvm\sequence.sv(4): Error in class extension specification.
+
+} {3.0 5.0} {}} C:/questasim64_2024.1/examples/My_Project/fifo_uvm/fifo_mem.sv {1 {vlog -work work -vopt -sv -stats=none {C:\questasim64_2024.1\examples\My_Project\fifo_uvm\fifo_mem.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module fifo_mem
+
+Top level modules:
+	fifo_mem
+
+} {} {}} C:/questasim64_2024.1/examples/My_Project/fifo_uvm/rd_ctrl.sv {1 {vlog -work work -vopt -sv -stats=none C:/questasim64_2024.1/examples/My_Project/fifo_uvm/rd_ctrl.sv
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module rd_ctrl
+
+Top level modules:
+	rd_ctrl
+
+} {} {}} C:/questasim64_2024.1/examples/My_Project/fifo_uvm/rd_ctrl.v {1 {vlog -work work -vopt -stats=none C:/questasim64_2024.1/examples/My_Project/fifo_uvm/rd_ctrl.v
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module rd_ctrl
+
+Top level modules:
+	rd_ctrl
+
+} {} {}} C:/questasim64_2024.1/examples/My_Project/fifo_uvm/sequence_item.sv {0 {vlog -work work -vopt -sv -stats=none C:/questasim64_2024.1/examples/My_Project/fifo_uvm/sequence_item.sv
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+** Error: (vlog-13069) C:/questasim64_2024.1/examples/My_Project/fifo_uvm/sequence_item.sv(3): near "uvm_sequence_item": syntax error, unexpected IDENTIFIER.
+** Error: C:/questasim64_2024.1/examples/My_Project/fifo_uvm/sequence_item.sv(3): Error in class extension specification.
+
+} {3.0 5.0} {}} C:/questasim64_2024.1/examples/My_Project/fifo_uvm/testbench.sv {0 {vlog -work work -vopt -sv -stats=none {C:\questasim64_2024.1\examples\My_Project\fifo_uvm\testbench.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+** Error: C:\questasim64_2024.1\examples\My_Project\fifo_uvm\testbench.sv(4): (vlog-13006) Could not find the package (my_pkg).  Design read will continue, but expect a cascade of errors after this failure.  Furthermore if you experience a vopt-7 error immediately before this error then please check the package names or the library search paths on the command line.
+** Note: (vlog-2286) C:\questasim64_2024.1\examples\My_Project\fifo_uvm\testbench.sv(6): Using implicit +incdir+C:/questasim64_2024.1/uvm-1.1d/../verilog_src/uvm-1.1d/src from import uvm_pkg
+
+} {3.0 4.0} {}} C:/questasim64_2024.1/examples/My_Project/fifo_uvm/test.sv {0 {vlog -work work -vopt -sv -stats=none C:/questasim64_2024.1/examples/My_Project/fifo_uvm/test.sv
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+** Error: (vlog-13069) C:/questasim64_2024.1/examples/My_Project/fifo_uvm/test.sv(1): near "uvm_test": syntax error, unexpected IDENTIFIER.
+** Error: C:/questasim64_2024.1/examples/My_Project/fifo_uvm/test.sv(1): Error in class extension specification.
+
+} {3.0 5.0} {}} C:/questasim64_2024.1/examples/My_Project/fifo_uvm/interface.sv {2 {vlog -work work -vopt -sv -stats=none C:/questasim64_2024.1/examples/My_Project/fifo_uvm/interface.sv
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling interface fifo_interface
+** Warning: C:/questasim64_2024.1/examples/My_Project/fifo_uvm/interface.sv(11): (vlog-2283) Extra semicolon in $unit (global) scope.
+** Warning: C:/questasim64_2024.1/examples/My_Project/fifo_uvm/interface.sv(12): (vlog-2284) Empty $unit scope found.
+-- Compiling package interface_sv_unit
+
+Top level modules:
+	--none--
+
+} {} {}} C:/questasim64_2024.1/examples/My_Project/fifo_uvm/design.sv {1 {vlog -work work -vopt -sv -stats=none C:/questasim64_2024.1/examples/My_Project/fifo_uvm/design.sv
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module asynchronous_fifo
+
+Top level modules:
+	asynchronous_fifo
+
+} {} {}} C:/questasim64_2024.1/examples/My_Project/fifo_uvm/sync_2ff.sv {1 {vlog -work work -vopt -sv -stats=none C:/questasim64_2024.1/examples/My_Project/fifo_uvm/sync_2ff.sv
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module sync_2ff
+
+Top level modules:
+	sync_2ff
+
+} {} {}} C:/questasim64_2024.1/examples/My_Project/fifo_uvm/wr_ctrl.v {1 {vlog -work work -vopt -stats=none C:/questasim64_2024.1/examples/My_Project/fifo_uvm/wr_ctrl.v
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module wr_ctrl
+
+Top level modules:
+	wr_ctrl
+
+} {} {}} C:/questasim64_2024.1/examples/My_Project/fifo_uvm/sequencer.sv {0 {vlog -work work -vopt -sv -stats=none C:/questasim64_2024.1/examples/My_Project/fifo_uvm/sequencer.sv
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+** Error: (vlog-13069) C:/questasim64_2024.1/examples/My_Project/fifo_uvm/sequencer.sv(1): near "uvm_sequencer": syntax error, unexpected IDENTIFIER.
+** Error: C:/questasim64_2024.1/examples/My_Project/fifo_uvm/sequencer.sv(1): Error in class extension specification.
+
+} {3.0 5.0} {}} C:/questasim64_2024.1/examples/My_Project/fifo_uvm/driver.sv {0 {vlog -work work -vopt -sv -stats=none {C:\questasim64_2024.1\examples\My_Project\fifo_uvm\driver.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+** Error: (vlog-13069) C:\questasim64_2024.1\examples\My_Project\fifo_uvm\driver.sv(1): near "uvm_driver": syntax error, unexpected IDENTIFIER.
+** Error: C:\questasim64_2024.1\examples\My_Project\fifo_uvm\driver.sv(1): Error in class extension specification.
+
+} {3.0 5.0} {}} C:/questasim64_2024.1/examples/My_Project/fifo_uvm/wr_ctrl.sv {1 {vlog -work work -vopt -sv -stats=none {C:\questasim64_2024.1\examples\My_Project\fifo_uvm\wr_ctrl.sv}
+QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
+-- Compiling module wr_ctrl
+
+Top level modules:
+	wr_ctrl
+
+} {} {}}

@@ -1,0 +1,87 @@
+class fifo_monitor extends uvm_monitor;
+  
+  `uvm_component_utils(fifo_monitor)
+  
+  //declare handle of virtual interface for monitor
+  virtual fifo_interface vif;  
+  fifo_sequence_item item;
+  function new(string name = "fifo_monitor", uvm_component parent);
+    super.new(name, parent);
+    `uvm_info("Monitor_class", "Inside constructor!", UVM_HIGH)
+    
+  endfunction
+  
+  function void build_phase(uvm_phase phase);
+    super.build_phase(phase);
+    `uvm_info("Monitor_class", "Inside build phase!", UVM_HIGH)
+    if(!(uvm_config_db #(virtual fifo_interface)::get(this, "*", "vif", vif))) begin
+      `uvm_error("Monitor_class", "Failed to get vif from uvm config database")
+    end
+    
+    
+  endfunction
+
+  function void connect_phase(uvm_phase phase);
+    super.connect_phase(phase);
+    `uvm_info("Monitor_class", "Inside connect phase!", UVM_HIGH)
+    
+    
+  endfunction
+  
+  
+  task run_phase (uvm_phase phase);
+    super.run_phase(phase);
+    `uvm_info("Monitor_class", "Inside Run  phase!", UVM_HIGH)
+   fork 
+  	  
+    forever begin
+
+      item = fifo_sequence_item::type_id::create("item");
+
+      //wait until reset is not active
+
+      wait(!vif.wrst_n);
+      wait(!vif.rrst_n);
+      //sample inputs
+      @(posedge vif.wclk);
+
+
+      item.w_en <= vif.w_en;
+      item.r_en <= vif.r_en;
+      item.data_in <= vif.data_in;
+      `uvm_info("Monitor sampling inputs",
+                $sformatf("w_en=%0b | Data_in =%d | r_en=%0b",
+                          vif.w_en,
+                          vif.data_in,
+                          vif.r_en),
+                UVM_MEDIUM)
+
+      //sample outputs
+    end
+
+    forever begin
+
+      @(posedge vif.rclk);
+      item.data_out <= vif.data_out;
+      item.full <= vif.full;
+      item.empty <= vif.empty;
+      `uvm_info("Monitor sampling outputs",
+                $sformatf("data_out=%d | full=%0b | empty=%0b",
+
+                          vif.data_out,
+                          vif.full,
+                          vif.empty),
+                UVM_MEDIUM)
+
+
+
+    end
+     
+   join_none
+
+
+    
+  endtask
+    
+  
+endclass;

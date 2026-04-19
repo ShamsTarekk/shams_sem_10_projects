@@ -1,0 +1,28 @@
+cls
+
+# Start logging
+transcript file sim.log
+
+vdel -all -lib work
+vlib work
+vmap work work
+
+# Compile design
+vlog -sv design.sv fifo_mem.v rd_ctrl.v wr_ctrl.v sync_2ff.v
+
+# Compile TB + UVM
+vlog -sv my_pkg.sv
+vlog -sv interface.sv
+vlog -sv testbench.sv
+
+# Run simulation
+vsim -voptargs=+acc work.top
+
+# Add all signals
+add wave -r *
+
+# Run
+run -all
+
+# Stop logging
+transcript file ""

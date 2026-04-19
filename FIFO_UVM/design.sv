@@ -1,0 +1,48 @@
+
+module asynchronous_fifo #(parameter DEPTH=16, ADDR_WIDTH = 4, DATA_WIDTH=8) (
+  input wclk, wrst_n,
+  input rclk, rrst_n,
+  input w_en, r_en,
+  input [DATA_WIDTH-1:0] data_in,
+  output reg [DATA_WIDTH-1:0] data_out,
+  output reg full, empty
+);
+  
+  reg [ADDR_WIDTH:0] g_wptr_sync, g_rptr_sync;
+  reg [ADDR_WIDTH:0] b_wptr, b_rptr;
+  reg [ADDR_WIDTH:0] g_wptr, g_rptr;
+
+  wire [ADDR_WIDTH-1:0] waddr, raddr;
+
+  sync_2ff #(ADDR_WIDTH) sync_wptr (.clk(rclk), .rst_n(rrst_n), .data_in(g_wptr), .data_out(g_wptr_sync)); //write pointer to read clock domain
+  sync_2ff #(ADDR_WIDTH) sync_rptr (.clk(wclk), .rst_n(wrst_n), .data_in(g_rptr), .data_out(g_rptr_sync)); //read pointer to write clock domain 
+  
+  wr_ctrl #(ADDR_WIDTH) wptr_h(wclk, wrst_n, w_en, g_rptr_sync, b_wptr, g_wptr, full);
+  rd_ctrl #(ADDR_WIDTH) rptr_h(rclk, rrst_n, r_en, g_wptr_sync, b_rptr, g_rptr, empty);
+  fifo_mem fifom(wclk, w_en, rclk, r_en, b_wptr, b_rptr, data_in, full, empty, data_out);
+
+
+//   //assertions
+  
+//   //o	assert: FIFO never writes when wfull is asserted.
+//   assert_fifo_no_write_when_full: assert property (@(posedge wclk) disable iff (!wrst_n) !(w_en && full));
+
+//   //o	assert: FIFO never reads when rempty is asserted.
+//   assert_fifo_no_read_when_empty: assert property (@(posedge rclk) disable iff (!rrst_n) !(r_en && empty));
+
+//   //o	assert: write pointer never exceeds FIFO depth (2^ADDR_WIDTH).
+//   assert_wptr_within_depth: assert property (@(posedge wclk) disable iff (!wrst_n) (g_wptr <= DEPTH));
+
+//   //o	assume: wen is never asserted when wfull is high (constrain environment).
+//   assume_wen_not_when_full: assume property (@(posedge wclk) disable iff (!wrst_n) !(w_en && full));
+
+//   //o	assume: ren is never asserted when rempty is high (constrain environment).
+//   assume_ren_not_when_empty: assume property (@(posedge rclk) disable iff (!rrst_n) !(r_en && empty));
+
+//   //o	cover: FIFO can become full (wfull reaches 1 from empty).
+//   cover_fifo_full: cover property (@(posedge wclk) disable iff (!wrst_n) full);
+
+//   //o	cover: FIFO can become empty after being full (rempty reaches 1 after wfull was 1).
+//   cover_fifo_empty_after_full: cover property (@(posedge rclk) disable iff (!rrst_n) (full[*1] ##1 empty));
+
+endmodule
